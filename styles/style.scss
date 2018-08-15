@@ -1,0 +1,142 @@
+@mixin imge($imges){
+    height: $imges;
+    width: $imges;
+}
+
+@mixin max($max) {
+    max-width: $max;
+    max-height: $max;
+}
+
+@mixin pI($border, $width, $padding, $mrt) {
+    border: $border;
+    width: $width;
+    padding: $padding;
+    margin-top: $mrt;
+}
+
+body{
+    background-color: #000;
+    color: azure;
+}
+
+header{
+    position: absolute;
+    z-index: 2000;
+    width: 235px;
+    top: 50px;
+    h1{
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.9);
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+        padding-left: 46%;
+        background: #000;
+        text-align: left;
+        padding-top: 2%;
+        font-family: 'Audiowide', cursive;
+       }
+}
+
+   #navigation {
+    margin-top: 20px;
+    width: 235px;
+    display:block;
+    list-style:none;
+    z-index:3;
+   }
+   #navigation a{
+    color: #444;
+    display: block;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+    line-height: 50px;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-size: 14px;
+   }
+   #navigation a:hover {
+    background: #ddd;
+   }
+
+h3{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+p{
+    font-weight: 350;
+}
+
+.panel{
+    @include pI(0.1em solid azure,60% ,1em ,1% );
+    width: 70%;
+    height: 60%;
+    margin-left: 24%;
+    margin-top: 8%;
+    margin-bottom: 10%; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    -webkit-transition: opacity .6s ease-in-out;
+    -moz-transition: opacity .6s ease-in-out;
+    -o-transition: opacity .6s ease-in-out;
+    transition: opacity .6s ease-in-out;
+    img{
+        @include imge(35em);
+        @include max(100%);
+        float: left;
+        display: block;
+        padding-right: 1%;
+     }
+}
+
+.panel:target{
+    opacity: 1;
+    z-index: 2000;
+   }
+
+.btn{
+    color: azure;
+    background-color: black;
+    border: 0.1em solid azure;
+    border-radius: 0%;
+    margin-top: 2%;
+    margin-left: 16%;
+    transition: box-shadow 2s 0s ease-in-out;
+} 
+
+.btn:hover{
+    color: black;
+    background-color: azure;
+    border-color: black;
+    //box-shadow: 0 0 0 10px rgb(0, 0, 0), 0 0 0 10px azure;
+}
+
+footer{
+    position: absolute;
+    color: #000;
+    background: rgb(58, 58, 58);
+    height: 27%;
+    width: 100%;
+    margin-top: 50%;
+    h1{
+        text-align: left;
+        font-size: 30px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: azure;
+        text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+        padding: 20px;
+        font-family: 'Audiowide', cursive;
+       }
+    h6{
+        color: azure;
+        padding-left: 20px;
+    }
+}
